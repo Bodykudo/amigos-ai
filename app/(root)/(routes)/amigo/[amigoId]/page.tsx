@@ -1,5 +1,6 @@
 import AmigoForm from '@/components/AmigoForm';
 import prismadb from '@/lib/prismadb';
+import { currentUser } from '@clerk/nextjs';
 
 interface Props {
   params: {
@@ -17,6 +18,11 @@ export default async function AmigoPage({ params: { amigoId } }: Props) {
   });
 
   const categories = await prismadb.category.findMany();
+
+  const user = await currentUser();
+
+  if (!user || (amigo && amigo.userId !== user.id)) {
+  }
 
   return <AmigoForm initialData={amigo} categories={categories} />;
 }
