@@ -1,6 +1,7 @@
 import AmigoForm from '@/components/AmigoForm';
 import prismadb from '@/lib/prismadb';
 import { currentUser } from '@clerk/nextjs';
+import { redirect } from 'next/navigation';
 
 interface Props {
   params: {
@@ -21,7 +22,12 @@ export default async function AmigoPage({ params: { amigoId } }: Props) {
 
   const user = await currentUser();
 
+  if (!amigo && amigoId !== 'new') {
+    redirect('/');
+  }
+
   if (!user || (amigo && amigo.userId !== user.id)) {
+    redirect('/');
   }
 
   return <AmigoForm initialData={amigo} categories={categories} />;

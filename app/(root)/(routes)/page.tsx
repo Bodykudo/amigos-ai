@@ -1,7 +1,7 @@
+import prismadb from '@/lib/prismadb';
 import Amigos from '@/components/Amigos';
 import Categories from '@/components/Categories';
 import SearchInput from '@/components/SearchInput';
-import prismadb from '@/lib/prismadb';
 
 interface Props {
   searchParams: {
