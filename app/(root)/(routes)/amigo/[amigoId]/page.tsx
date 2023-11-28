@@ -1,6 +1,6 @@
 import AmigoForm from '@/components/AmigoForm';
 import prismadb from '@/lib/prismadb';
-import { currentUser } from '@clerk/nextjs';
+import { auth, currentUser, redirectToSignIn } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
 
 interface Props {
@@ -10,7 +10,7 @@ interface Props {
 }
 
 export default async function AmigoPage({ params: { amigoId } }: Props) {
-  // TODO: Check subscription
+  const { userId } = auth();
 
   const amigo = await prismadb.amigo.findUnique({
     where: {
@@ -20,13 +20,15 @@ export default async function AmigoPage({ params: { amigoId } }: Props) {
 
   const categories = await prismadb.category.findMany();
 
-  const user = await currentUser();
+  if (!userId) {
+    redirectToSignIn();
+  }
 
   if (!amigo && amigoId !== 'new') {
     redirect('/');
   }
 
-  if (!user || (amigo && amigo.userId !== user.id)) {
+  if (amigo && amigo.userId !== userId) {
     redirect('/');
   }
 
