@@ -1,15 +1,15 @@
 import prismadb from '@/lib/prismadb';
 import { auth, redirectToSignIn } from '@clerk/nextjs';
 import { redirect } from 'next/navigation';
-import { ChatClient } from './components/Client';
+import ChatClient from './components/ChatClient';
 
-interface Props {
+interface ChatPageProps {
   params: {
     chatId: string;
   };
 }
 
-export default async function ChatPage({ params: { chatId } }: Props) {
+export default async function ChatPage({ params: { chatId } }: ChatPageProps) {
   const { userId } = auth();
 
   if (!userId) {

@@ -3,7 +3,7 @@ import Amigos from '@/components/Amigos';
 import Categories from '@/components/Categories';
 import SearchInput from '@/components/SearchInput';
 
-interface Props {
+interface RootPageProps {
   searchParams: {
     categoryId: string;
     name: string;
@@ -12,7 +12,7 @@ interface Props {
 
 export default async function RootPage({
   searchParams: { categoryId, name },
-}: Props) {
+}: RootPageProps) {
   const data = await prismadb.amigo.findMany({
     where: {
       categoryId,

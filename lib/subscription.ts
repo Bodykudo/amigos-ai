@@ -8,7 +8,7 @@ export const checkSubscription = async () => {
 
   if (!userId) return false;
 
-  const user = await prismadb.amigosUser.findUnique({
+  const user = await prismadb.userSubscription.findUnique({
     where: {
       userId,
     },

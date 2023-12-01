@@ -14,22 +14,22 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from './ui/form';
+} from '@/components/ui/form';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from './ui/select';
-import { Input } from './ui/input';
-import { Separator } from './ui/separator';
-import ImageUpload from './ImageUpload';
-import { Textarea } from './ui/textarea';
-import { Button } from './ui/button';
+} from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 import { Wand2 } from 'lucide-react';
-import { useToast } from './ui/use-toast';
+import { useToast } from '@/components/ui/use-toast';
 import { useRouter } from 'next/navigation';
+import ImageUpload from './ImageUpload';
 
 interface Props {
   initialData: Amigo | null;

@@ -1,8 +1,13 @@
 'use client';
 
+import { useProModal } from '@/hooks/useProModal';
 import { cn } from '@/lib/utils';
 import { Divide, Home, Plus, Settings } from 'lucide-react';
 import { usePathname, useRouter } from 'next/navigation';
+
+interface SidebarProps {
+  isPro: boolean;
+}
 
 const routes = [
   {
@@ -20,12 +25,15 @@ const routes = [
   { icon: Settings, href: '/settings', label: 'Settings', pro: false },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isPro }: SidebarProps) {
   const pathname = usePathname();
   const router = useRouter();
+  const proModal = useProModal();
 
   const onNavigate = (url: string, pro: boolean) => {
-    // TODO: check if pro
+    if (pro && !isPro) {
+      return proModal.onOpen();
+    }
 
     router.push(url);
   };

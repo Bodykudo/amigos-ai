@@ -18,7 +18,7 @@ interface ChatClientProps {
   };
 }
 
-export function ChatClient({ amigo }: ChatClientProps) {
+export default function ChatClient({ amigo }: ChatClientProps) {
   const router = useRouter();
   const [messages, setMessages] = useState<ChatMessageProps[]>(amigo.messages);
 
