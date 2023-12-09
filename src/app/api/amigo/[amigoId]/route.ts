@@ -72,11 +72,10 @@ export async function PATCH(
   }
 }
 
-export async function DELETE({
-  params: { amigoId },
-}: {
-  params: { amigoId: string };
-}) {
+export async function DELETE(
+  request: Request,
+  { params: { amigoId } }: { params: { amigoId: string } }
+) {
   try {
     const { userId } = auth();
 
