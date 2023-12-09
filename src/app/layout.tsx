@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { ClerkProvider } from '@clerk/nextjs';
 
 import './globals.css';
 
 import { Toaster } from '@/src/components/ui/toaster';
 import { ThemeProvider } from '@/src/components/ThemeProvider';
+import AuthProvider from '../components/AuthProvider';
 import ProModal from '@/src/components/ProModal';
 
 import { cn } from '@/src/lib/utils';
@@ -48,16 +48,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
-      <html lang='en' suppressHydrationWarning>
-        <body className={cn('bg-secondary', inter.className)}>
-          <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+    <html lang='en' suppressHydrationWarning>
+      <body className={cn('bg-secondary', inter.className)}>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <AuthProvider>
             <ProModal />
             {children}
             <Toaster />
-          </ThemeProvider>
-        </body>
-      </html>
-    </ClerkProvider>
+          </AuthProvider>
+        </ThemeProvider>
+      </body>
+    </html>
   );
 }
