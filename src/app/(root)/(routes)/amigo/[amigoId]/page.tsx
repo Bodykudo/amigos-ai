@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import { redirect } from 'next/navigation';
 import { auth, redirectToSignIn } from '@clerk/nextjs';
 
@@ -8,6 +9,47 @@ import { checkSubscription } from '@/src/lib/subscription';
 interface AmigoPageProps {
   params: {
     amigoId: string;
+  };
+}
+
+export async function generateMetadata({
+  params: { amigoId },
+}: AmigoPageProps): Promise<Metadata> {
+  if (amigoId === 'new') {
+    return {
+      title: 'Amigos AI - Create Amigo',
+      description: 'Create your own amigos using AI!',
+      openGraph: {
+        title: 'Amigos AI - Create Amigo',
+        description: 'Create your own amigos using AI!',
+        url: 'https://amigos-ai.vercel.app/amigo/new',
+      },
+      twitter: {
+        title: 'Amigos AI - Create Amigo',
+        description: 'Create your own amigos using AI!',
+      },
+    };
+  }
+
+  const amigo = await prismadb.amigo.findUnique({
+    where: {
+      id: amigoId,
+    },
+  });
+
+  if (!amigo) {
+    return {};
+  }
+
+  return {
+    title: `Amigos AI - Edit Amigo: ${amigo.name}`,
+    openGraph: {
+      title: `Amigos AI - Edit Amigo: ${amigo.name}`,
+      url: `https://amigos-ai.vercel.app/amigo/${amigoId}`,
+    },
+    twitter: {
+      title: `Amigos AI - Edit Amigo: ${amigo.name}`,
+    },
   };
 }
 

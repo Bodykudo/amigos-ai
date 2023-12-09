@@ -1,15 +1,16 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Poppins } from 'next/font/google';
+import { useTheme } from 'next-themes';
 import { UserButton } from '@clerk/nextjs';
 import { Sparkle } from 'lucide-react';
 
 import { Button } from './ui/button';
 import ModeToggle from './ModeToggle';
 import MobileSidebar from './MobileSidebar';
-import { cn } from '@/src/lib/utils';
 import { useProModal } from '@/src/hooks/useProModal';
 
 const font = Poppins({
@@ -25,20 +26,29 @@ interface NavbarProps {
 export default function Navbar({ isUser, isPro }: NavbarProps) {
   const router = useRouter();
   const proModal = useProModal();
+  const { resolvedTheme } = useTheme();
 
   return (
     <div className='fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16'>
       <div className='flex items-center'>
         <MobileSidebar isPro={isPro} />
         <Link href='/'>
-          <h1
-            className={cn(
-              'hidden md:block text-xl md:text-3xl font-bold text-primary',
-              font.className
-            )}
-          >
-            amigos.ai
-          </h1>
+          <div className='relative w-14 h-14 md:h-16 md:w-64'>
+            <Image
+              src={
+                resolvedTheme === 'dark' ? '/logo-dark.png' : '/logo-light.png'
+              }
+              alt='amigos.ai'
+              className='hidden md:block'
+              fill
+            />
+            <Image
+              src='/favicon-light.png'
+              alt='logo'
+              fill
+              className='block md:hidden'
+            />
+          </div>
         </Link>
       </div>
       <div className='flex items-center gap-x-3'>
