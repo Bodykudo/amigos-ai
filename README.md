@@ -2,7 +2,7 @@
   <img src="public/logo-dark.png" height="200px" />
 </div>
 
-# Amigos AI
+# FormWiz
 
 Amigos AI: Create your own companions using AI! Chat with scientists, celebrities, football players, superheroes, or anyone you desire. Amigos AI allows you to craft personalized characters and engage in conversations with them whenever you want.
 
