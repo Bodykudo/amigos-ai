@@ -22,6 +22,8 @@ Amigos AI is deployed to Vercel. You can try it on the following URL: [amigos-ai
 - LangChain
 - Prisma
 - Clerk
+- Upstash Redis
+- Pinecone
 - Tailwind
 - Shadcn/UI
 - React Hook Form
