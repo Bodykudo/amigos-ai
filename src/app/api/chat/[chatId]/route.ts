@@ -4,9 +4,9 @@ import { StreamingTextResponse, LangChainStream } from 'ai';
 import { Replicate } from 'langchain/llms/replicate';
 import { CallbackManager } from 'langchain/callbacks';
 
-import prismadb from '@/src/lib/prismadb';
-import { MemoryManager } from '@/src/lib/memory';
-import { rateLimit } from '@/src/lib/rateLimit';
+import prismadb from '@/lib/prismadb';
+import { MemoryManager } from '@/lib/memory';
+import { rateLimit } from '@/lib/rateLimit';
 
 export async function POST(
   request: Request,

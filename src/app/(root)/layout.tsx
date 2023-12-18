@@ -1,10 +1,10 @@
 import { auth } from '@clerk/nextjs';
 
-import Navbar from '@/src/components/Navbar';
-import Sidebar from '@/src/components/Sidebar';
+import Navbar from '@/components/Navbar';
+import Sidebar from '@/components/Sidebar';
 
-import { checkSubscription } from '@/src/lib/subscription';
-import { cn } from '@/src/lib/utils';
+import { checkSubscription } from '@/lib/subscription';
+import { cn } from '@/lib/utils';
 
 export default async function RootLayout({
   children,

@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation';
 import { auth, redirectToSignIn } from '@clerk/nextjs';
 
 import ChatClient from './_components/ChatClient';
-import prismadb from '@/src/lib/prismadb';
+import prismadb from '@/lib/prismadb';
 
 interface ChatPageProps {
   params: {

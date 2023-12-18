@@ -3,8 +3,8 @@
 import { usePathname, useRouter } from 'next/navigation';
 import { Home, Plus, Settings } from 'lucide-react';
 
-import { useProModal } from '@/src/hooks/useProModal';
-import { cn } from '@/src/lib/utils';
+import { useProModal } from '@/hooks/useProModal';
+import { cn } from '@/lib/utils';
 import { useUser } from '@clerk/nextjs';
 
 interface SidebarProps {

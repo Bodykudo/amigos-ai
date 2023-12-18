@@ -4,12 +4,12 @@ import { useTheme } from 'next-themes';
 import { BeatLoader } from 'react-spinners';
 import { CopyIcon } from 'lucide-react';
 
-import { Button } from '@/src/components/ui/button';
-import { useToast } from '@/src/components/ui/use-toast';
-import UserAvatar from '@/src/components/UserAvatar';
-import BotAvatar from '@/src/components/BotAvatar';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/components/ui/use-toast';
+import UserAvatar from '@/components/UserAvatar';
+import BotAvatar from '@/components/BotAvatar';
 
-import { cn } from '@/src/lib/utils';
+import { cn } from '@/lib/utils';
 
 export interface ChatMessageProps {
   role: 'system' | 'user';

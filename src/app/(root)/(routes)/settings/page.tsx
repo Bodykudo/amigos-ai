@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import SubscriptionButton from './_components/SubscriptionButton';
-import { checkSubscription } from '@/src/lib/subscription';
+import { checkSubscription } from '@/lib/subscription';
 
 export const metadata: Metadata = {
   title: 'Amigos AI - Settings',

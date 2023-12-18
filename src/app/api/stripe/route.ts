@@ -1,9 +1,9 @@
 import { NextResponse } from 'next/server';
 import { auth, currentUser } from '@clerk/nextjs';
 
-import prismadb from '@/src/lib/prismadb';
-import { stripe } from '@/src/lib/stripe';
-import { absoluteURL } from '@/src/lib/utils';
+import prismadb from '@/lib/prismadb';
+import { stripe } from '@/lib/stripe';
+import { absoluteURL } from '@/lib/utils';
 
 const settingsURL = absoluteURL('/settings');
 

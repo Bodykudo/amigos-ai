@@ -3,12 +3,12 @@ import { Inter } from 'next/font/google';
 
 import './globals.css';
 
-import { Toaster } from '@/src/components/ui/toaster';
-import { ThemeProvider } from '@/src/components/ThemeProvider';
+import { Toaster } from '@/components/ui/toaster';
+import { ThemeProvider } from '@/components/ThemeProvider';
 import AuthProvider from '../components/AuthProvider';
-import ProModal from '@/src/components/ProModal';
+import ProModal from '@/components/ProModal';
 
-import { cn } from '@/src/lib/utils';
+import { cn } from '@/lib/utils';
 
 const inter = Inter({ subsets: ['latin'] });
 

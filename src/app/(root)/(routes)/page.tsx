@@ -1,8 +1,8 @@
-import Amigos from '@/src/components/Amigos';
-import Categories from '@/src/components/Categories';
-import SearchInput from '@/src/components/SearchInput';
+import Amigos from '@/components/Amigos';
+import Categories from '@/components/Categories';
+import SearchInput from '@/components/SearchInput';
 
-import prismadb from '@/src/lib/prismadb';
+import prismadb from '@/lib/prismadb';
 
 interface RootPageProps {
   searchParams: {

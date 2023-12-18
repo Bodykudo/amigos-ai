@@ -12,15 +12,15 @@ import {
 } from 'lucide-react';
 import { Amigo, Message } from '@prisma/client';
 
-import { Button } from '@/src/components/ui/button';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/src/components/ui/dropdown-menu';
-import { useToast } from '@/src/components/ui/use-toast';
-import BotAvatar from '@/src/components/BotAvatar';
+} from '@/components/ui/dropdown-menu';
+import { useToast } from '@/components/ui/use-toast';
+import BotAvatar from '@/components/BotAvatar';
 
 interface ChatHeaderProps {
   amigo: Amigo & {

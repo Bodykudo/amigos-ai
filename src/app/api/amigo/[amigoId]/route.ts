@@ -1,8 +1,8 @@
 import { NextResponse } from 'next/server';
 import { auth, currentUser } from '@clerk/nextjs';
 
-import prismadb from '@/src/lib/prismadb';
-import { checkSubscription } from '@/src/lib/subscription';
+import prismadb from '@/lib/prismadb';
+import { checkSubscription } from '@/lib/subscription';
 
 export async function PATCH(
   req: Request,

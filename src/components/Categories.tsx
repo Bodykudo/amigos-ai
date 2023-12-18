@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from 'next/navigation';
 import qs from 'query-string';
 import { Category } from '@prisma/client';
-import { cn } from '@/src/lib/utils';
+import { cn } from '@/lib/utils';
 
 interface CategoriesProps {
   data: Category[];

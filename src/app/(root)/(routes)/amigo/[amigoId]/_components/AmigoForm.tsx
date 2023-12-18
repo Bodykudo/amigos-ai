@@ -16,22 +16,22 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '@/src/components/ui/form';
+} from '@/components/ui/form';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from '@/src/components/ui/select';
-import { Input } from '@/src/components/ui/input';
-import { Separator } from '@/src/components/ui/separator';
-import { Textarea } from '@/src/components/ui/textarea';
-import { Button } from '@/src/components/ui/button';
-import { useToast } from '@/src/components/ui/use-toast';
+} from '@/components/ui/select';
+import { Input } from '@/components/ui/input';
+import { Separator } from '@/components/ui/separator';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/components/ui/use-toast';
 import ImageUpload from './ImageUpload';
 
-import { PREAMBLE, SEED_CHAT } from '@/src/lib/constants';
+import { PREAMBLE, SEED_CHAT } from '@/lib/constants';
 
 interface AmigoFormProps {
   initialData: Amigo | null;

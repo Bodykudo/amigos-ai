@@ -3,8 +3,8 @@ import { redirect } from 'next/navigation';
 import { auth, redirectToSignIn } from '@clerk/nextjs';
 
 import AmigoForm from './_components/AmigoForm';
-import prismadb from '@/src/lib/prismadb';
-import { checkSubscription } from '@/src/lib/subscription';
+import prismadb from '@/lib/prismadb';
+import { checkSubscription } from '@/lib/subscription';
 
 interface AmigoPageProps {
   params: {

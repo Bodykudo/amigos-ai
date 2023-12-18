@@ -2,8 +2,8 @@ import { NextResponse } from 'next/server';
 import { headers } from 'next/headers';
 import Stripe from 'stripe';
 
-import prismadb from '@/src/lib/prismadb';
-import { stripe } from '@/src/lib/stripe';
+import prismadb from '@/lib/prismadb';
+import { stripe } from '@/lib/stripe';
 
 export async function POST(req: Request) {
   const body = await req.text();

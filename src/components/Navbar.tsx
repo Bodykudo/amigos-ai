@@ -11,7 +11,7 @@ import { Sparkle } from 'lucide-react';
 import { Button } from './ui/button';
 import ModeToggle from './ModeToggle';
 import MobileSidebar from './MobileSidebar';
-import { useProModal } from '@/src/hooks/useProModal';
+import { useProModal } from '@/hooks/useProModal';
 
 const font = Poppins({
   weight: '600',

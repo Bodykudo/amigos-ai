@@ -13,7 +13,7 @@ import {
 import { Separator } from './ui/separator';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
-import { useProModal } from '@/src/hooks/useProModal';
+import { useProModal } from '@/hooks/useProModal';
 
 export default function ProModal() {
   const [isLoading, setIsLoading] = useState(false);
