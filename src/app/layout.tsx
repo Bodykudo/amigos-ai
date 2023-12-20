@@ -16,7 +16,12 @@ export const metadata: Metadata = {
   title: 'Amigos AI - Create your own companions using AI!',
   description:
     'Amigos AI: Create your own companions using AI! Chat with scientists, celebrities, football players, superheroes, or anyone you desire. Amigos AI allows you to craft personalized characters and engage in conversations with them whenever you want.',
-  authors: { name: 'Abdallah Magdy' },
+  generator: 'Next.js',
+  manifest: '/manifest.json',
+  authors: {
+    name: 'Abdallah Magdy',
+    url: 'https://www.linkedin.com/in/abdallahmagdy',
+  },
   keywords: [
     'AI Companions',
     'Chat with Celebrities',
@@ -40,6 +45,12 @@ export const metadata: Metadata = {
     creator: 'a_m_s666',
     images: ['https://amigos-ai.vercel.app/mockup.png'],
   },
+  viewport:
+    'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',
+  icons: [
+    { rel: 'apple-touch-icon', url: 'icons/icon-128x128.png' },
+    { rel: 'icon', url: 'icons/icon-128x128.png' },
+  ],
 };
 
 export default function RootLayout({

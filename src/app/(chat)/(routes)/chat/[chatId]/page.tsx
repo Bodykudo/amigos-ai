@@ -31,13 +31,13 @@ export async function generateMetadata({
       title: `Amigos AI - Chat With ${amigo.name}`,
       description: `Chat with ${amigo.name}, a ${amigo.description} using Amigos AI`,
       url: `https://amigos-ai.vercel.app/chat/${chatId}`,
-      images: [amigo.src, '/mockup.png'],
+      images: [amigo.src, 'https://amigos-ai.vercel.app/mockup.png'],
     },
     twitter: {
       title: `Amigos AI - Chat With ${amigo.name}`,
       description: `Chat with ${amigo.name}, a ${amigo.description} using Amigos AI`,
       card: 'summary',
-      images: [amigo.src, '/mockup.png'],
+      images: [amigo.src, 'https://amigos-ai.vercel.app/mockup.png'],
     },
   };
 }
