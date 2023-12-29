@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'Amigos AI - Settings',
   openGraph: {
     title: 'Amigos AI - Settings',
-    url: 'https://amigos-ai.vercel.app/settings',
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/settings`,
   },
   twitter: {
     title: 'Amigos AI - Settings',

@@ -30,14 +30,14 @@ export async function generateMetadata({
     openGraph: {
       title: `Amigos AI - Chat With ${amigo.name}`,
       description: `Chat with ${amigo.name}, a ${amigo.description} using Amigos AI`,
-      url: `https://amigos-ai.vercel.app/chat/${chatId}`,
-      images: [amigo.src, 'https://amigos-ai.vercel.app/mockup.png'],
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/chat/${chatId}`,
+      images: [amigo.src, `${process.env.NEXT_PUBLIC_APP_URL}/mockup.png`],
     },
     twitter: {
       title: `Amigos AI - Chat With ${amigo.name}`,
       description: `Chat with ${amigo.name}, a ${amigo.description} using Amigos AI`,
       card: 'summary',
-      images: [amigo.src, 'https://amigos-ai.vercel.app/mockup.png'],
+      images: [amigo.src, `${process.env.NEXT_PUBLIC_APP_URL}/mockup.png`],
     },
   };
 }

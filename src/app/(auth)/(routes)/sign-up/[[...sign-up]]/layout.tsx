@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: 'Amigos AI - Sign Up',
   openGraph: {
     title: 'Amigos AI - Sign Up',
-    url: 'https://amigos-ai.vercel.app/sign-up',
+    url: `${process.env.NEXT_PUBLIC_APP_URL}/sign-up`,
   },
   twitter: {
     title: 'Amigos AI - Sign Up',

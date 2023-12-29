@@ -32,8 +32,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Amigos AI - Create your own companions using AI!',
     type: 'website',
-    images: ['https://amigos-ai.vercel.app/mockup.png'],
-    url: 'https://amigos-ai.vercel.app/',
+    images: [`${process.env.NEXT_PUBLIC_APP_URL}/mockup.png`],
+    url: process.env.NEXT_PUBLIC_APP_URL,
     description:
       'Amigos AI: Create your own companions using AI! Chat with scientists, celebrities, football players, superheroes, or anyone you desire. Amigos AI allows you to craft personalized characters and engage in conversations with them whenever you want.',
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       'Amigos AI: Create your own companions using AI! Chat with scientists, celebrities, football players, superheroes, or anyone you desire. Amigos AI allows you to craft personalized characters and engage in conversations with them whenever you want.',
     card: 'summary_large_image',
     creator: 'a_m_s666',
-    images: ['https://amigos-ai.vercel.app/mockup.png'],
+    images: [`${process.env.NEXT_PUBLIC_APP_URL}/mockup.png`],
   },
   viewport:
     'minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover',

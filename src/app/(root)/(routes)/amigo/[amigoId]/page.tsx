@@ -22,7 +22,7 @@ export async function generateMetadata({
       openGraph: {
         title: 'Amigos AI - Create Amigo',
         description: 'Create your own amigos using AI!',
-        url: 'https://amigos-ai.vercel.app/amigo/new',
+        url: `${process.env.NEXT_PUBLIC_APP_URL}/amigo/new`,
       },
       twitter: {
         title: 'Amigos AI - Create Amigo',
@@ -45,7 +45,7 @@ export async function generateMetadata({
     title: `Amigos AI - Edit Amigo: ${amigo.name}`,
     openGraph: {
       title: `Amigos AI - Edit Amigo: ${amigo.name}`,
-      url: `https://amigos-ai.vercel.app/amigo/${amigoId}`,
+      url: `${process.env.NEXT_PUBLIC_APP_URL}/amigo/${amigoId}`,
     },
     twitter: {
       title: `Amigos AI - Edit Amigo: ${amigo.name}`,
