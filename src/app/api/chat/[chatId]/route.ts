@@ -96,7 +96,7 @@ export async function POST(
       await model
         .call(
           `
-        ONLY generate plain sentences without prefix of who is speaking. DO NOT use ${name}: prefix.
+        ONLY generate plain sentences without prefix of who is speaking. DO NOT use ${name}: prefix, just send the content of the message, don't send any extra information either at the beginning of the message or at the end of the message, send the whole message at once as you are ${name} and you are speaking to the user.
 
         ${amigo.instructions}
 
@@ -109,9 +109,7 @@ export async function POST(
         .catch(console.error)
     );
 
-    const cleand = response.replaceAll(',', '');
-    const chunks = cleand.split('\n');
-    const finalResponse = chunks[0];
+    const finalResponse = response.replaceAll(',', '');
 
     await memoryManager.writeToHistory('' + finalResponse.trim(), amigoKey);
     var Readable = require('stream').Readable;
